@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="static/app.js">
+    <script src="https://kit.fontawesome.com/dad20be998.js" crossorigin="anonymous"></script>
+    <title>Contact</title>
+</head>
+<body>
+    <section id="contact" class="contact-section ">
+        <h2>Contact</h2>
+        <form id="contact-form" method="post" action="/send_email">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Submit info</button>
+        </form>
+    </section>
+    <div id="flash-messages" class="flash-messages"></div>
+</body>
+    <footer>
+        <div class="footer-content">
+            <p>Copyright &copy; 2026 Daniel Viaña - All rights reserved.</p>
+            <div id="social-links">
+                        <a href="https://www.instagram.com/spidey.chill/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/spideychill777" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://co.linkedin.com/in/daniel-via%C3%B1a-pe%C3%B1a-b73a2922b?trk=people-guest_people_search-card" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.tiktok.com/@spidey.chill_" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://discord.gg/Q24RD4wZsd" target="_blank"><i class="fab fa-discord"></i></a>
+                    </div>
+        </div>
+    </footer>
+</html>
