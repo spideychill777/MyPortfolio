@@ -3,6 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section {
+    flex: 1; /* Esto empuja el footer hacia abajo si hay poco contenido */
+}
 :root{
         --dark-bg: #121212;
         --light-text: #f5f5f5;
@@ -34,15 +47,20 @@ body{
     max-width: 600px;
     margin: auto;
 }
-#contact-form input, #contact-form textarea{
+#contact-form input, #contact-form textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #444; 
+    padding: 0.85rem 1.2rem; /* Un poco más de aire */
+    border: 1px solid #333; 
     border-radius: 8px;
-    background-color: var(--clean-color);
-    color: #000;
-    transition: border 0.3s, box-shadow 0.3s;
-} 
+    background-color: #1a1a1a; /* Un gris oscuro en lugar de blanco */
+    color: #fff; /* Texto blanco para que contraste con el fondo oscuro */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#contact-form input::placeholder, #contact-form textarea::placeholder {
+    color: #888;
+}
 
 #contact-form input:focus, #contact-form textarea:focus {
   outline: none;
@@ -51,27 +69,31 @@ body{
 }
 
 /* Validación visual */
-#contact-form input:valid, #contact-form textarea:valid {
-  border: 1px solid #28a745;
+#contact-form input:valid:not(:placeholder-shown), 
+#contact-form textarea:valid:not(:placeholder-shown) {
+    border: 1px solid #28a745;
 }
-#contact-form input:invalid, #contact-form textarea:invalid {
-  border: 1px solid #dc3545;
+#contact-form input:invalid:not(:placeholder-shown), 
+#contact-form textarea:invalid:not(:placeholder-shown) {
+    border: 1px solid #dc3545;
 }
 
-#contact-form button{
-    background-color: var(--darker-bg);
+#contact-form button {
+    background: linear-gradient(90deg, #001f3f, #007bff); /* Match con el footer */
     color: #fff;
     border: none;
     padding: 1rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-#contact-form button:hover{
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.5);
+
+#contact-form button:hover {
+    transform: translateY(-2px); /* Efecto de levante */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 #contact-form button.loading{
     background-color: var(--clean-color);
